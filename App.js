@@ -1,13 +1,14 @@
-import * as React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import * as React from "react";
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 // import { useNavigation} from '@react-navigation/native';
 // import RecipeListScreen from './src/screens/RecipeListScreen';
 // import SavedRecipesScreen from './src/screens/SavedRecipesScreen';
 // import ScanRecipesScreen from './src/screens/ScanRecipeScreen';
 
-import MainScreen from './src/screens/MainScreen';
+import MainScreen from "./src/screens/MainScreen";
+import RecipeDetailScreen from "./src/screens/RecipeDetailScreen";
 
 const Stack = createNativeStackNavigator();
 
@@ -15,15 +16,27 @@ function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="MainScreen" component={MainScreen} options={{
-          headerShown:false,
-        }}/>
+        <Stack.Screen
+          name="MainScreen"
+          component={MainScreen}
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name="RecipeDetailScreen"
+          component={RecipeDetailScreen}
+          options={{
+            title: "Recipe Detail",
+            headerTransparent: true,
+          }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
 }
 
-export default App;
+export default App;
 
 // function HomeScreen() {
 //   const navigation = useNavigation();
@@ -57,17 +70,6 @@ export default App;
 
 // const Stack = createNativeStackNavigator();
 
-
-
-
-
-
-
-
-
-
-
-
 // import { StatusBar } from 'expo-status-bar';
 // import { StyleSheet, Text, View } from 'react-native';
 
@@ -100,7 +102,7 @@ export default App;
 //   container: {
 //     flex: 1, //consumsi semua bagian layar atau => width =100, dan height=100
 //     backgroundColor: '#fff',
-//     justifyContent: 'space-between',    //center: masih di kiri tapi di tengah , space between = dikasi jarang tengahnya, 
+//     justifyContent: 'space-between',    //center: masih di kiri tapi di tengah , space between = dikasi jarang tengahnya,
 //     alignItems: 'center',
 //     flexDirection: 'row',  //urutan, row=kanan ke kiri, column=atas ke bawah
 //   },
